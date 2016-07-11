@@ -17,7 +17,7 @@ defaults:
 
     # Default comment to be applied to bot.
     # NOTE: If you do not want a comment by default, set to empty string ("").
-    comment: "Hello! I am a bot. Type !help for a list of commands."
+    comment: "Bonjour ! Je suis un robot. Envoyez !help pour une liste de commandes."
 
     # Default channel for the bot to enter upon connection.
     # NOTE: If you wish for the bot to connect to the root channel, set to empty string ("").
@@ -145,8 +145,8 @@ commands:
     prefix: "!"
 
     common_messages:
-        no_tracks_error: "There are no tracks in the queue."
-        caching_disabled_error: "Caching is currently disabled."
+        no_tracks_error: "Il n'y a pas de titres dans la liste de lecture."
+        caching_disabled_error: "Le cache est actuellement désactivé."
 
     # Below is a list of the commands supported by MumbleDJ. Each command has
     # three configurable options:
@@ -161,21 +161,21 @@ commands:
             - "add"
             - "a"
         is_admin: false
-        description: "Adds a track or playlist from a media site to the queue."
+        description: "Ajoute un titre ou une playlist à la liste de lecture."
         messages:
-            no_url_error: "A URL must be supplied with the add command."
-            no_valid_tracks_error: "No valid tracks were found with the provided URL(s)."
-            tracks_too_long_error: "Your track(s) were either too long or an error occurred while processing them. No track(s) have been added."
-            one_track_added: "<b>%s</b> added <b>1</b> track to the queue:<br><i>%s</i> from %s"
-            many_tracks_added: "<b>%s</b> added <b>%d</b> tracks to the queue."
-            num_tracks_too_long: "<br><b>%d</b> tracks could not be added due to error or because they are too long."
+            no_url_error: "Une URL doit être envoyée avec cette commande."
+            no_valid_tracks_error: "Aucun contenu valide n'a été trouvé avec le(s) lien(s)."
+            tracks_too_long_error: "La ou les titre(s) sont soit trop longs, soit une erreur est survenue. Rien n'a été ajouté."
+            one_track_added: "<b>%s</b> a ajouté <b>1</b> titre à la liste de lecture :<br><i>%s</i> depuis %s"
+            many_tracks_added: "<b>%s</b> a ajouté <b>%d</b> titres à la liste de lecture."
+            num_tracks_too_long: "<br><b>%d</b> titre(s) ignorés à cause d'une erreur ou de la durée du contenu."
 
     addnext:
         aliases:
             - "addnext"
             - "an"
         is_admin: true
-        description: "Adds a track or playlist from a media site as the next item in the queue."
+        description: "Ajoute un titre ou une playlist juste après le titre en cours à la liste de lecture."
         # addnext uses the messages defined for add.
 
     cachesize:
@@ -183,9 +183,9 @@ commands:
             - "cachesize"
             - "cs"
         is_admin: true
-        description: "Outputs the file size of the cache in MiB if caching is enabled."
+        description: "Retourne la taille utilisée par le cache, en MiB, si le cache est activé."
         messages:
-            current_size: "The current size of the cache is <b>%.2v MiB</b>."
+            current_size: "La taille du cache est actuellement de <b>%.2v MiB</b>."
 
     currenttrack:
         aliases:
@@ -193,55 +193,55 @@ commands:
             - "currentsong"
             - "current"
         is_admin: false
-        description: "Outputs information about the current track in the queue if one exists."
+        description: "Retourne des informations du titre en cours, s'il y en a un."
         messages:
-            current_track: "The current track is <i>%s</i>, added by <b>%s</b>."
+            current_track: "Le titre en cours est <i>%s</i>, ajouté par <b>%s</b>."
 
     forceskip:
         aliases:
             - "forceskip"
             - "fs"
         is_admin: true
-        description: "Immediately skips the current track."
+        description: "Passe immédiatement le titre actuel."
         messages:
-            track_skipped: "The current track has been forcibly skipped by <b>%s</b>."
+            track_skipped: "Le titre en cours a été sauté par <b>%s</b>."
 
     forceskipplaylist:
         aliases:
             - "forceskipplaylist"
             - "fsp"
         is_admin: true
-        description: "Immediately skips the current playlist."
+        description: "Passe imméditement la playlist actuelle."
         messages:
-            no_playlist_error: "The current track is not part of a playlist."
-            playlist_skipped: "The current playlist has been forcibly skipped by <b>%s</b>."
+            no_playlist_error: "Le titre actuel ne vient pas d'une playlist."
+            playlist_skipped: "La playlist actuelle a été sauté par <b>%s</b>."
 
     help:
         aliases:
             - "help"
             - "h"
         is_admin: false
-        description: "Outputs this list of commands."
+        description: "Retourne la liste des commandes."
         messages:
-            commands_header: "<br><b>Commands:</b><br>"
-            admin_commands_header: "<br><b>Admin Commands:</b><br>"
+            commands_header: "<br><b>Commandes :</b><br>"
+            admin_commands_header: "<br><b>Commandes Admin :</b><br>"
 
     joinme:
         aliases:
             - "joinme"
             - "join"
         is_admin: true
-        description: "Moves MumbleDJ into your current channel if not playing audio to someone else."
+        description: "Déplace MumbleDJ vers votre salon, s'il est inactif."
         messages:
-            others_are_listening_error: "Users in another channel are listening to me."
-            in_your_channel: "I am now in your channel!"
+            others_are_listening_error: "Des utilisateurs sont actuellement en train de m'écouter."
+            in_your_channel: "Me voici !"
 
     kill:
         aliases:
             - "kill"
             - "k"
         is_admin: true
-        description: "Stops the bot and cleans its cache directory."
+        description: "Arrête le robot et vide le cache."
 
     listtracks:
         aliases:
@@ -250,21 +250,21 @@ commands:
             - "list"
             - "l"
         is_admin: false
-        description: "Outputs a list of the tracks currently in the queue."
+        description: "Retourne la liste de lecture."
         messages:
-            invalid_integer_error: "An invalid integer was supplied."
-            track_listing: "<b>%d</b>: <i>%s</i>, added by <b>%s</b>.<br>"
+            invalid_integer_error: "Un nombre invalide a été reçu."
+            track_listing: "<b>%d</b> : <i>%s</i>, ajouté par <b>%s</b>.<br>"
 
     move:
         aliases:
             - "move"
             - "m"
         is_admin: true
-        description: "Moves the bot into the Mumble channel provided via argument."
+        description: "Déplace le robot dans un salon, précisé via un argument."
         messages:
-            no_channel_provided_error: "A destination channel must be supplied to move the bot."
-            channel_doesnt_exist_error: "The provided channel does not exist."
-            move_successful: "You have successfully moved the bot to <b>%s</b>." 
+            no_channel_provided_error: "Le salon de destination doit être précisé."
+            channel_doesnt_exist_error: "Le salon indiqué ne semble pas exister."
+            move_successful: "Le robot a été déplacé vers <b>%s</b>."
 
     nexttrack:
         aliases:
@@ -272,19 +272,19 @@ commands:
             - "nextsong"
             - "next"
         is_admin: false
-        description: "Outputs information about the next track in the queue if one exists."
+        description: "Retourne des informations du titre suivant, s'il y en a un."
         messages:
-            current_track_only_error: "The current track is the only track in the queue."
-            next_track: "The next track is <i>%s</i>, added by <b>%s</b>."
+            current_track_only_error: "Il n'y a pas de titre suivant !"
+            next_track: "Le titre suivant est <i>%s</i>, ajouté par <b>%s</b>."
 
     numcached:
         aliases:
             - "numcached"
             - "nc"
         is_admin: true
-        description: "Outputs the number of tracks cached on disk if caching is enabled."
+        description: "Retourne le nombre de titres en cache, si le cache est activé."
         messages:
-            num_cached: "There are currently <b>%d</b> items stored in the cache."
+            num_cached: "Il y a actuellement <b>%d</b> titres dans le cache."
 
     numtracks:
         aliases:
@@ -292,56 +292,56 @@ commands:
             - "numsongs"
             - "nt"
         is_admin: false
-        description: "Outputs the number of tracks currently in the queue."
+        description: "Retourne le nombre de titres dans la liste de lecture."
         messages:
-            one_track: "There is currently <b>1</b> track in the queue."
-            plural_tracks: "There are currently <b>%d</b> tracks in the queue."
+            one_track: "Il y a <b>1</b> titre dans la liste de lecture."
+			plural_tracks: "Il y a <b>%d</d> titres dans la liste de lecture."
 
     pause:
         aliases:
             - "pause"
         is_admin: false
-        description: "Pauses audio playback."
+        description: "Met la lecture en pause."
         messages:
-            no_audio_error: "Either the audio is already paused, or there are no tracks in the queue."
-            paused: "<b>%s</b> has paused audio playback."
+            no_audio_error: "Soit l'audio est déjà mise sur pause, soit il n'y a pas de titres à lire."
+            paused: "<b>%s</b> a mis la lecture en pause."
 
     register:
         aliases:
             - "register"
             - "reg"
         is_admin: true
-        description: "Registers the bot on the server."
+        description: "Enregistre le robot sur le serveur."
         messages:
-            already_registered_error: "I am already registered on the server."
-            registered: "I am now registered on the server."
+            already_registered_error: "Je suis déjà enregistré sur le serveur."
+            registered: "Je suis maintenant enregistré sur le serveur."
 
     reload:
         aliases:
             - "reload"
             - "r"
         is_admin: true
-        description: "Reloads the configuration file."
+        description: "Recharge le fichier de configuration."
         messages:
-            reloaded: "The configuration file has been successfully reloaded."
+            reloaded: "Le fichier de configuration a été rechargé."
 
     reset:
         aliases:
             - "reset"
             - "re"
         is_admin: true
-        description: "Resets the queue by removing all queue items."
+        description: "Vide la liste de lecture."
         messages:
-            queue_reset: "<b>%s</b> has reset the queue."
+            queue_reset: "<b>%s</b> a vidé la liste de lecture."
 
     resume:
         aliases:
             - "resume"
         is_admin: false
-        description: "Resumes audio playback."
+        description: "Reprends la lecture du titre, mis en pause."
         messages:
-            audio_error: "Either the audio is already playing, or there are no tracks in the queue."
-            resumed: "<b>%s</b> has resumed audio playback."
+            audio_error: "Soit l'audio est déjà en lecture, soit il n'y a pas de titres à lire."
+            resumed: "<b>%s</b> a repris la lecture."
 
     setcomment:
         aliases:
@@ -349,10 +349,10 @@ commands:
             - "comment"
             - "sc"
         is_admin: true
-        description: "Sets the comment displayed next to MumbleDJ's username in Mumble."
+        description: "Défini le commentaire de MumbleDJ dans Mumble."
         messages:
-            comment_removed: "The comment for the bot has been successfully removed."
-            comment_changed: "The comment for the bot has been successfully changed to the following: %s"
+            comment_removed: "Le commentaire du robot a été retiré."
+            comment_changed: "Le commentaire du robot a été changé vers : %s"
 
     shuffle:
         aliases:
@@ -360,31 +360,31 @@ commands:
             - "shuf"
             - "sh"
         is_admin: true
-        description: "Randomizes the tracks currently in the queue."
+        description: "Mélange la liste de lecture."
         messages:
-            not_enough_tracks_error: "There are not enough tracks in the queue to execute a shuffle."
-            shuffled: "The audio queue has been shuffled."
+            not_enough_tracks_error: "Il n'y a pas assez de titres dans la liste de lecture pour la mélanger."
+            shuffled: "La liste de lecture a été mélangée."
 
     skip:
         aliases:
             - "skip"
             - "s"
         is_admin: false
-        description: "Places a vote to skip the current track."
+        description: "Voter pour sauter le titre actuel."
         messages:
-            already_voted_error: "You have already voted to skip this track."
-            voted: "<b>%s</b> has voted to skip the current track."
+            already_voted_error: "Vous avez déjà voté pour sauter ce titre."
+            voted: "<b>%s</b> a voté pour sauter le titre."
 
     skipplaylist:
         aliases:
             - "skipplaylist"
             - "sp"
         is_admin: false
-        description: "Places a vote to skip the current playlist."
+        description: "Voter pour sauter la playlist actuelke."
         messages:
-            no_playlist_error: "The current track is not part of a playlist."
-            already_voted_error: "You have already voted to skip this playlist."
-            voted: "<b>%s</b> has voted to skip the current playlist."
+            no_playlist_error: "Le titre actuel ne vient pas d'une playlist."
+            already_voted_error: "Vous avez déjà voté pour sauter cette playlist."
+            voted: "<b>%s</b> a voté pour sauter la playlist."
 
     toggleshuffle:
         aliases:
@@ -393,10 +393,10 @@ commands:
             - "togshuf"
             - "tsh"
         is_admin: true
-        description: "Toggles automatic track shuffling on/off."
-        messages:
-            toggled_off: "Automatic shuffling has been toggled off."
-            toggled_on: "Automatic shuffling has been toggled on."
+        description: "Active/désactive le mode de lecture aléatoire."
+        messages: 
+            toggled_off: "La lecture aléatoire a été désactivée."
+            toggled_on: "La lecture aléatoire a été activée."
 
 
     version:
@@ -404,18 +404,18 @@ commands:
             - "version"
             - "v"
         is_admin: false
-        description: "Outputs the current version of MumbleDJ."
+        description: "Retourne la version actuelle de MumbleDJ."
         messages:
-            version: "MumbleDJ version: <b>%s</b>"
+            version: "MumbleDJ version : <b>%s</b>"
 
     volume:
         aliases:
             - "volume"
             - "vol"
         is_admin: false
-        description: "Changes the volume if an argument is provided, outputs the current volume otherwise."
+        description: "Change le volume si la valeur est indiquée, sinon retourne le volume actuel."
         messages:
-            parsing_error: "The requested volume could not be parsed."
-            out_of_range_error: "Volumes must be between the values <b>%.2f</b> and <b>%.2f</b>."
-            current_volume: "The current volume is <b>%.2f</b>."
-            volume_changed: "<b>%s</b> has changed the volume to <b>%.2f</b>."
+            parsing_error: "Le volume demandé n'a pas pu être lu correctement."
+            out_of_range_error: "Le volume doit être entre <b>%.2f</b> et <b>%.2f</b>."
+            current_volume: "Le volume est actuellement à <b>%.2f</b>."
+            volume_changed: "<b>%s</b> a changé le volume à <b>%.2f</b>."
